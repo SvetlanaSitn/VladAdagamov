@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сайт про котиков</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    
+  <link rel="stylesheet" href="https://jqueryui.com//resources/demos/style.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+  <script>
+        $(function() {
+            $('#dialog').dialog({
+                position: ['left', 'top'],
+                buttons: [{text: 'OK', click: function(){$(this).dialog('close')}}]
+            });
+
+            $('#d1, #d2').dialog({
+                autoOpen: false
+            }).filter('#d2').dialog('option', 'position', ['right', 'bottom'])
+
+            $('#btn1, #btn2').button().click(function(e) {
+                var target = this.id = "btn1" ? "#d1" : "#d2";
+                if ($(target).dialog("isOpen")) {
+                    $(target).dialog("close")
+                } else {
+                    $(target).dialog("open")
+                }
+             })
+        })
+    </script>
+    <script>
+        $(function(){
+            $('#d3').dialog({
+                autoOpen: false
+            });
+            $('#img').button().click(function(e){
+                var target = this.id = "img" ? "#d3" : "#d4";
+                if ($(target).dialog("isOpen")) {
+                    $(target).dialog("close")
+                } else {
+                    $(target).dialog("open")
+                }
+            })
+        })
+    </script>
+       <script>
+        $(function(){
+            $('#d5').dialog({
+                autoOpen: false
+            });
+            $('#img1').button().click(function(e){
+                var target = this.id = "img" ? "#d5" : "#d4";
+                if ($(target).dialog("isOpen")) {
+                    $(target).dialog("close")
+                } else {
+                    $(target).dialog("open")
+                }
+            })
+        })
+           
+    </script>
+       <script>
+        $(function(){
+            $('#d7').dialog({
+                autoOpen: false
+            });
+            $('#img2').button().click(function(e){
+                var target = this.id = "img" ? "#d7" : "#d4";
+                if ($(target).dialog("isOpen")) {
+                    $(target).dialog("close")
+                } else {
+                    $(target).dialog("open")
+                }
+            })
+        })
+           
+    </script>
+       <script>
+        $(function(){
+            $('#d9').dialog({
+                autoOpen: false
+            });
+            $('#img3').button().click(function(e){
+                var target = this.id = "img" ? "#d9" : "#d4";
+                if ($(target).dialog("isOpen")) {
+                    $(target).dialog("close")
+                } else {
+                    $(target).dialog("open")
+                }
+            })
+        })
+           
+    </script>
+    
+    
+    
+    
+    
+    <style>
+  #drag4 { width: 200px; height: 150px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color: lightgreen;}
+  #drop4 { width: 250px; height: 200px; padding: 0.5em; float: left; margin: 10px; background-color: orange;}
+  #drop5 { width: 250px; height: 200px; padding: 0.5em; float: left; margin: 10px; background-color: orange;}
+    #drop6 { width: 250px; height: 200px; padding: 0.5em; float: left; margin: 10px; background-color: orange;}
+        
+        
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#drag4" ).draggable();
+    $( "#drop4" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+      $( function() {
+    $( "#drag4" ).draggable();
+    $( "#drop5" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+      
+      $( function() {
+    $( "#drag4" ).draggable();
+    $( "#drop6" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+      
+  </script>
+   
+   
+   <script>
+					$(document).ready(function(){
+						$( "#drag4" ).draggable();
+						$( "#drop4").droppable({
+							over:function(){
+								$("#drag4").css("background-color", "lightgreen");
+								$("#drop4").css("background-color", "orange");
+							},
+							drop:function(){
+								
+								$("#drop4").css("background-color", "lightred");
+								
+								alert("Неправильно!")
+							}
+						})
+					})
+				</script>
+				<script>
+					$(document).ready(function(){
+						$( "#drag4" ).draggable();
+						$( "#drop5").droppable({
+							over:function(){
+								$("#drag4").css("background-color", "lightgreen");
+								$("#drop5").css("background-color", "orange");
+							},
+							drop:function(){
+								$("#drag4").css("display","none");
+								$("#drop5").css("background-color", "white");
+								
+								alert("Правильно!")
+							}
+						})
+					})
+				</script>
+				<script>
+					$(document).ready(function(){
+						$( "#drag4" ).draggable();
+						$( "#drop6").droppable({
+							over:function(){
+								$("#drag4").css("background-color", "lightgreen");
+								$("#drop6").css("background-color", "orange");
+							},
+							drop:function(){
+								
+								$("#drop6").css("background-color", "lightred");
+								
+								alert("Неправильно!")
+							}
+						})
+					})
+				</script>
+    
+    
+    
+    
+    
+    <style>body{
+   height: 200px;
+background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
+}
+*{
+						margin: 0;
+					}
+					.pos{
+						display: flex;
+					}
+					.aside{
+						width: 15%;
+						background-color: rgb(236, 191, 132);
+					}
+					.content{
+						padding: 10px;
+						width: 70%;
+						background-color: rgb(223, 223, 152);
+					}
+        #flex{
+            display: flex;
+        }
+h1{
+    text-align: center;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.ashera{
+    text-indent: 800px;
+}</style>
+</head>
+<body>
+    <div class="pos">
+	<div class="aside"></div>
+	<div class="content">
+        
+    
+    
+    <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Самые популярная порода котов в мире</a></li>
+      <li><a href="#tabs-2">Самые дорогие породы кошек в мире</a></li>
+    <li><a href="#tabs-3">Уличные кошки</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Самой популярной породой являются Сиамские кошки. Сиамские кошки известны непростым характером. Конечно, они не агрессоры и тираны, как их часто описывают, но за авторитет хозяину придется бороться с первых дней. Это не та кошка, которую можно игнорировать, занимаясь своими делами – сиамцам необходимо общение. Они отлично поддаются дрессировке благодаря врожденному любопытству, а оторваться от этих голубых глаз ну просто невозможно. Если вы хотите завести данную породу кошек, то учтите все ее особенности. Если вы не будете воспитывать и проводить с Сиамской кошкой время, то в скором времени у вас возникнут проблемы с авторитетом в глазах вышей кошки.
+
+</p>
+  </div>
+  <div id="tabs-2">
+    <p>Рекордсменом по стоимости и самой неоднозначной породой являются ашеры. Их появление датировано 2007 годом. Биотехнологическая компания Lifestyle Pets заявила о том, что выведена абсолютно новая порода кошек. Внешне они – экзотические сервалы, но по характеру – ласковый и преданный домашний питомец. Название порода получила в честь древнесемитской богини, считавшейся матерью всего живого.
+
+Однако очень скоро вокруг ашеров разразился скандал. Фелинологи выяснили, что эта порода –– не что иное как кошки саванны типа F1. Однако, несмотря на это, толстосумы готовы тратить баснословные деньги на их покупку. Первоначально за котят запросили цену в $27 000, поскольку в компании рождались только пять пометов этой породы. За последнее десятилетие цена на них существенно поднялась.
+
+Ашера является гибридом африканского сервала, азиатского бенгала и обычной домашней кошки. У нее вытянутое, стройное, мускулистое тело, длинные крепкие лапы и гибкий тонкий хвост. Главным достоянием ашеры является ее роскошная шерсть, напоминающая шкуру леопарда или снежного барса.
+
+Эти крупные кошки очень любят бегать и прыгать, причем в прыжке могут пролететь несколько метров, а потому никак не приспособлены для жизни в квартирах. Их место – в загородных домах с большим пространством. А если там есть еще и бассейн, счастью ашеры не будет предела.</p>
+  </div>
+  <div id="tabs-3">
+    <p>По приблизительным оценкам экспертов, в США насчитывается около 120 млн диких кошек. В некоторых городских районах на квадратную милю (2,59 км²) приходятся сотни кошек. Например, в Чикаго обитают около 5 млн кошек, в штате Висконсин насчитывают 2 млн животных.
+      
+      Количество одичавших кошек в Австралии достигает 18 млн, только в Мельбурне (Melbourne) — 5 млн. Руководитель проекта «Park and Wildlife Commission» доктор Глен Эдвардс (Dr. Glen Edwards) отмечает трудность отлова кошек при помощи обыкновенных ловушек или приманок, а также отсутствие естественных врагов. Идеальными естественными врагами диких кошек на континенте могли бы стать орлы, однако из-за различия в активности (кошки ведут ночной образ жизни, когда как хищные птицы охотятся в течение дня) такое биологическое равновесие не может быть реализовано природой. Успешные меры по регулированию численности одичавших кошек проводятся на острове Кенгуру, где их существование представляло угрозу для сумчатой мыши Айткена, южных коричневых бандикутов и других мелких животных, а также ухудшало санитарно-эпидемиологическую обстановку на острове, приводя к значительным потерям в животноводстве из-за заражения домашнего скота саркоцистозом и другими заболеваниями, переносчиками которых являются бездомные кошки.
+
+Проблема безнадзорных кошек существует в Таллине (Эстония). Старший специалист Департамента окружающей среды Трийну Саум указывает на трудности отлова кошек из-за специфического поведения (недоверчивость к людям)
+        
+        По данным 2008 года, в Эстонии количество бездомных кошек в два раза превышало количество бездомных собак.
+
+
+
+Л. Карните (L. Karnīte), руководительница общества защиты животных «Dzīvnieku SOS», поясняет, что точных сведений о количестве уличных кошек в городах Латвии нет, никто не занимается таким подсчётом. Однако, у каждого дома микрорайона приблизительно три популяции кошек, в каждой примерно десяток животных. Таким образом, только в Риге обитает приблизительно 200 000 бездомных кошек.
+
+Лаура Карните считает, что «только дело времени, когда бездомные кошки начнут массово болеть бешенством, отдельные случаи уже были». Лаура Карните также отмечает, что многих бездомных кошек подкармливают, но реже стерилизуют, так как это дорого. Власти не в силах урегулировать проблему уличных животных. Для того, чтобы поддержать городскую программу стерилизации, которая работает в Риге с 2003 года, запущен проект «Kaķu dzīve» (Кошачья жизнь) при помощи Интернет портала ziedot.lv. Частные лица также могут поддержать программу стерилизации уличных животных.
+      </p>
+  </div>
+  
+</div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <h1>Какая порода кошек самая дорогая в мире?</h1>
+<div id="d3" title="Попробуй еще раз!">
+  <p>Это неправильный ответ!</p>
+</div>
+<div class="flex"><div><h3>Шотландская вислоухая кошка</h3><img width="450" height="400" id="img" src="https://krasivosti.pro/uploads/posts/2021-04/1617974896_35-p-britanskii-i-shotlandskii-kot-37.jpg"; alt=""></div>
+<div><h3>Ашера</h3><img width="450" height="400" id="img1" src="https://www.8lap.ru/upload/resize_cache/iblock/b6b/341_341_2/b6bd527e850ecd78d719242ab92d9743.jpg"; alt=""></div></div>
+ 
+ <div id="d5" title="Молодец!">
+  <p>Это правильный ответ!</p>
+</div>
+        <br>
+        <br>
+        <br>
+        <h1>Какая самая популярная порода кошек?</h1>
+            <div id="d7" title="Молодец!">
+  <p>Это правильный ответ!</p>
+</div>
+<div class="flex"><div><h3>Сиамская кошка</h3><img width="450" height="400" id="img2" src="https://petsi.net/images/catbreed/siamskaya.jpg"; alt=""></div>
+
+ 
+ <div id="d9" title="Попробуй еще раз!">
+  <p>Это неправильный ответ!</p>
+</div>
+      <div><h3>Сфинкс</h3><img width="450" height="400" id="img3" src="https://web-zoopark.ru/wp-content/uploads/2018/06/1-712.jpg"; alt=""></div></div>
+       <br>
+       <br>
+       <br>
+       <br>
+       <div id="drag4" class="ui-widget-content">
+  <p>В какой стране количество бездомных кошек превышает количество бездомных собак в 2 раза?</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ 
+<div id="flex"><div id="drop4" class="ui-widget-header">
+  <p>США</p>
+</div>
+       <div id="drop5" class="ui-widget-header">
+  <p>Эстония</p>
+</div> 
+ <div id="drop6" class="ui-widget-header">
+  <p>Россия</p>
+</div> 
+ 
+       </div>
+        </div> 
+        <div class="aside"></div>
+    </div>
+</body>
+</html>
